@@ -1,35 +1,39 @@
 :root {
-  /*
-   * LIPIcs-inspired colours.
-   * Yellow is deliberately used sparingly.
-   */
-  --yellow: #f2c94c;
-  --yellow-light: #fff3bd;
+  --white: #ffffff;
+  --off-white: #fbfbfd;
 
-  --black: #1d1d1b;
-  --grey: #666;
-  --light-grey: #dddddd;
-  --background: #ffffff;
+  --navy: #17324d;
+  --blue: #315f8c;
+  --blue-light: #eaf2f8;
 
-  --link: #174a8b;
+  --pink: #e7a6b8;
+  --pink-light: #fbeef2;
+
+  --text: #252525;
+  --grey: #666666;
+  --light-grey: #dddddf;
+
+  --link: #285f91;
 }
 
+
+/* ---------------------------------------------------------
+   GENERAL
+   --------------------------------------------------------- */
 
 * {
   box-sizing: border-box;
 }
 
-
 html {
-  background: var(--background);
+  background: var(--white);
 }
-
 
 body {
   margin: 0;
 
-  color: var(--black);
-  background: var(--background);
+  color: var(--text);
+  background: var(--white);
 
   font-family:
     Georgia,
@@ -42,13 +46,20 @@ body {
 
 
 /* ---------------------------------------------------------
-   LIPIcs-like yellow line
+   TOP ACCENT
    --------------------------------------------------------- */
 
 .top-rule {
-  height: 8px;
+  height: 6px;
   width: 100%;
-  background: var(--yellow);
+
+  background:
+    linear-gradient(
+      to right,
+      var(--navy) 0%,
+      var(--blue) 55%,
+      var(--pink) 100%
+    );
 }
 
 
@@ -72,9 +83,10 @@ header {
   margin-bottom: 36px;
 }
 
-
 h1 {
   margin: 0;
+
+  color: var(--navy);
 
   font-family:
     Arial,
@@ -86,7 +98,6 @@ h1 {
   font-weight: 600;
   letter-spacing: -0.5px;
 }
-
 
 .subtitle {
   margin: 7px 0 4px 0;
@@ -101,7 +112,6 @@ h1 {
   font-size: 15px;
 }
 
-
 .contact {
   margin-top: 6px;
 
@@ -113,10 +123,9 @@ h1 {
   font-size: 14px;
 }
 
-
 .contact span {
   margin: 0 5px;
-  color: #999;
+  color: #aaa;
 }
 
 
@@ -128,20 +137,24 @@ p {
   margin: 13px 0;
 }
 
-
 strong {
   font-weight: 600;
 }
 
-
 a {
   color: var(--link);
   text-decoration: none;
+
+  border-bottom: 1px solid transparent;
+
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
-
 a:hover {
-  text-decoration: underline;
+  color: var(--navy);
+  border-bottom-color: var(--pink);
 }
 
 
@@ -150,14 +163,15 @@ a:hover {
    --------------------------------------------------------- */
 
 section {
-  margin-top: 38px;
+  margin-top: 40px;
 }
-
 
 h2 {
   margin: 0 0 17px 0;
 
-  border-bottom: 1px solid var(--black);
+  border-bottom: 1px solid var(--light-grey);
+
+  color: var(--navy);
 
   font-family:
     Arial,
@@ -169,18 +183,14 @@ h2 {
   font-weight: 600;
 }
 
-
-/*
- * The small yellow block behind the heading gives
- * the LIPIcs-like touch without overwhelming the page.
- */
-
 h2 span {
   display: inline-block;
 
-  padding: 3px 10px 3px 8px;
+  padding: 3px 10px 4px 8px;
 
-  background: var(--yellow);
+  background: var(--pink-light);
+
+  border-bottom: 3px solid var(--pink);
 }
 
 
@@ -192,29 +202,25 @@ ul {
   padding-left: 23px;
 }
 
-
 li {
   margin-bottom: 8px;
 }
-
 
 .news {
   list-style: none;
   padding-left: 0;
 }
 
-
 .news li {
-  margin-bottom: 12px;
+  margin-bottom: 13px;
 }
-
 
 .date {
   display: inline-block;
 
   min-width: 78px;
 
-  color: var(--grey);
+  color: var(--blue);
 
   font-family:
     Arial,
@@ -231,7 +237,11 @@ li {
    --------------------------------------------------------- */
 
 .research-topic {
-  margin: 12px 0;
+  margin: 13px 0;
+}
+
+.research-topic strong {
+  color: var(--navy);
 }
 
 
@@ -240,12 +250,15 @@ li {
    --------------------------------------------------------- */
 
 .publication {
-  margin: 0 0 31px 0;
-  padding-left: 14px;
+  margin: 0 0 32px 0;
+  padding-left: 15px;
 
-  border-left: 4px solid var(--yellow);
+  border-left: 4px solid var(--blue);
 }
 
+.publication:nth-of-type(even) {
+  border-left-color: var(--pink);
+}
 
 .pub-meta {
   margin-bottom: 7px;
@@ -258,55 +271,55 @@ li {
   font-size: 12px;
 }
 
-
 .tag {
   display: inline-block;
 
   padding: 2px 7px;
 
-  background: var(--yellow);
+  background: var(--blue-light);
 
-  color: var(--black);
+  color: var(--navy);
 
   font-weight: 600;
+
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
 
-
 .tag.yellow-light {
-  background: var(--yellow-light);
+  /*
+   * Keeping this class name means you do not
+   * need to edit the existing HTML.
+   */
+  background: var(--pink-light);
 }
-
 
 .status {
   margin-left: 7px;
   color: var(--grey);
 }
 
-
 .paper-title {
   margin-bottom: 3px;
+
+  color: var(--navy);
 
   font-size: 17px;
   font-weight: 600;
   line-height: 1.45;
 }
 
-
 .authors {
   margin-bottom: 1px;
 }
 
-
 .venue {
-  color: #444;
+  color: #555;
   font-style: italic;
 }
 
-
 .paper-links {
-  margin-top: 5px;
+  margin-top: 7px;
 
   font-family:
     Arial,
@@ -316,37 +329,43 @@ li {
   font-size: 13px;
 }
 
-
 .paper-links a {
   display: inline-block;
 
   margin-right: 5px;
-  padding: 1px 6px;
+  padding: 1px 7px;
 
-  border: 1px solid #aaa;
+  border: 1px solid #b9c8d7;
+  border-radius: 3px;
 
-  color: var(--black);
+  color: var(--blue);
+
+  background: var(--white);
 }
 
-
 .paper-links a:hover {
-  background: var(--yellow-light);
+  background: var(--pink-light);
 
-  border-color: var(--black);
+  border-color: var(--pink);
+
+  color: var(--navy);
 
   text-decoration: none;
 }
+
 
 /* ---------------------------------------------------------
    TEACHING
    --------------------------------------------------------- */
 
 .teaching-semester {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .semester-title {
-  margin-bottom: 10px;
+  margin-bottom: 11px;
+
+  color: var(--blue);
 
   font-family:
     Arial,
@@ -355,24 +374,24 @@ li {
 
   font-size: 14px;
   font-weight: 600;
-
-  color: var(--grey);
 }
 
 .teaching-item {
-  margin-bottom: 18px;
+  margin-bottom: 19px;
   padding-left: 14px;
 
-  border-left: 3px solid var(--yellow);
+  border-left: 3px solid var(--pink);
 }
 
 .teaching-role {
   display: inline-block;
 
   margin-bottom: 3px;
-  padding: 1px 6px;
+  padding: 1px 7px;
 
-  background: var(--yellow-light);
+  background: var(--pink-light);
+
+  color: var(--navy);
 
   font-family:
     Arial,
@@ -387,6 +406,7 @@ li {
 }
 
 .course-title {
+  color: var(--navy);
   font-weight: 600;
 }
 
@@ -409,7 +429,7 @@ li {
 
 footer {
   margin-top: 55px;
-  padding-top: 11px;
+  padding-top: 12px;
 
   border-top: 1px solid var(--light-grey);
 
@@ -423,16 +443,27 @@ footer {
   font-size: 12px;
 }
 
-
 .footer-mark {
   display: inline-block;
 
   width: 10px;
   height: 10px;
 
-  margin-right: 5px;
+  margin-right: 6px;
 
-  background: var(--yellow);
+  background: var(--pink);
+
+  border-radius: 50%;
+}
+
+
+/* ---------------------------------------------------------
+   TEXT SELECTION
+   --------------------------------------------------------- */
+
+::selection {
+  background: var(--pink-light);
+  color: var(--navy);
 }
 
 
@@ -447,16 +478,13 @@ footer {
     padding: 0 19px;
   }
 
-
   h1 {
     font-size: 29px;
   }
 
-
   body {
     font-size: 16px;
   }
-
 
   .date {
     display: block;
