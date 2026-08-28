@@ -1,19 +1,20 @@
 :root {
   --white: #ffffff;
-  --off-white: #fbfbfd;
+  --cream: #fffaf1;
 
-  --navy: #17324d;
-  --blue: #315f8c;
-  --blue-light: #eaf2f8;
+  --orange: #e97824;
+  --orange-dark: #b95313;
+  --orange-light: #fff0df;
 
-  --pink: #e7a6b8;
-  --pink-light: #fbeef2;
+  --green: #28785f;
+  --green-dark: #175947;
+  --green-light: #e3f2eb;
 
   --text: #252525;
   --grey: #666666;
-  --light-grey: #dddddf;
+  --light-grey: #dedbd5;
 
-  --link: #285f91;
+  --link: #1d6c58;
 }
 
 
@@ -46,19 +47,20 @@ body {
 
 
 /* ---------------------------------------------------------
-   TOP ACCENT
+   TOP RULE
    --------------------------------------------------------- */
 
 .top-rule {
-  height: 6px;
+  height: 9px;
   width: 100%;
 
   background:
     linear-gradient(
       to right,
-      var(--navy) 0%,
-      var(--blue) 55%,
-      var(--pink) 100%
+      var(--orange) 0%,
+      var(--orange) 46%,
+      var(--green) 46%,
+      var(--green) 100%
     );
 }
 
@@ -80,29 +82,29 @@ main {
    --------------------------------------------------------- */
 
 header {
-  margin-bottom: 36px;
+  margin-bottom: 38px;
 }
 
 h1 {
   margin: 0;
 
-  color: var(--navy);
+  color: var(--green-dark);
 
   font-family:
     Arial,
     Helvetica,
     sans-serif;
 
-  font-size: 34px;
+  font-size: 35px;
   line-height: 1.2;
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -0.5px;
 }
 
 .subtitle {
   margin: 7px 0 4px 0;
 
-  color: var(--grey);
+  color: var(--orange-dark);
 
   font-family:
     Arial,
@@ -110,10 +112,11 @@ h1 {
     sans-serif;
 
   font-size: 15px;
+  font-weight: 500;
 }
 
 .contact {
-  margin-top: 6px;
+  margin-top: 7px;
 
   font-family:
     Arial,
@@ -130,6 +133,23 @@ h1 {
 
 
 /* ---------------------------------------------------------
+   LINKS
+   --------------------------------------------------------- */
+
+a {
+  color: var(--green);
+  text-decoration: none;
+
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  color: var(--orange-dark);
+  border-bottom-color: var(--orange);
+}
+
+
+/* ---------------------------------------------------------
    TEXT
    --------------------------------------------------------- */
 
@@ -138,23 +158,8 @@ p {
 }
 
 strong {
+  color: var(--green-dark);
   font-weight: 600;
-}
-
-a {
-  color: var(--link);
-  text-decoration: none;
-
-  border-bottom: 1px solid transparent;
-
-  transition:
-    color 0.15s ease,
-    border-color 0.15s ease;
-}
-
-a:hover {
-  color: var(--navy);
-  border-bottom-color: var(--pink);
 }
 
 
@@ -163,15 +168,13 @@ a:hover {
    --------------------------------------------------------- */
 
 section {
-  margin-top: 40px;
+  margin-top: 41px;
 }
 
 h2 {
-  margin: 0 0 17px 0;
+  margin: 0 0 18px 0;
 
-  border-bottom: 1px solid var(--light-grey);
-
-  color: var(--navy);
+  border-bottom: 2px solid var(--green);
 
   font-family:
     Arial,
@@ -180,17 +183,23 @@ h2 {
 
   font-size: 19px;
   line-height: 1.4;
-  font-weight: 600;
+  font-weight: 650;
+
+  color: var(--green-dark);
 }
 
 h2 span {
   display: inline-block;
 
-  padding: 3px 10px 4px 8px;
+  margin-bottom: -2px;
+  padding: 4px 12px 4px 9px;
 
-  background: var(--pink-light);
+  color: #222;
 
-  border-bottom: 3px solid var(--pink);
+  background: var(--orange-light);
+
+  border-left: 6px solid var(--orange);
+  border-bottom: 2px solid var(--orange);
 }
 
 
@@ -213,14 +222,18 @@ li {
 
 .news li {
   margin-bottom: 13px;
+
+  padding-left: 12px;
+
+  border-left: 3px solid var(--green-light);
 }
 
 .date {
   display: inline-block;
 
-  min-width: 78px;
+  min-width: 82px;
 
-  color: var(--blue);
+  color: var(--orange-dark);
 
   font-family:
     Arial,
@@ -228,7 +241,7 @@ li {
     sans-serif;
 
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 
@@ -237,11 +250,14 @@ li {
    --------------------------------------------------------- */
 
 .research-topic {
-  margin: 13px 0;
+  margin: 14px 0;
+  padding: 7px 10px;
+
+  border-left: 4px solid var(--green);
 }
 
-.research-topic strong {
-  color: var(--navy);
+.research-topic:nth-child(even) {
+  border-left-color: var(--orange);
 }
 
 
@@ -250,18 +266,28 @@ li {
    --------------------------------------------------------- */
 
 .publication {
-  margin: 0 0 32px 0;
-  padding-left: 15px;
+  position: relative;
 
-  border-left: 4px solid var(--blue);
+  margin: 0 0 34px 0;
+  padding: 14px 15px 14px 18px;
+
+  background: var(--cream);
+
+  border-left: 5px solid var(--orange);
+  border-top: 1px solid #eee3d4;
+  border-bottom: 1px solid #eee3d4;
 }
 
 .publication:nth-of-type(even) {
-  border-left-color: var(--pink);
+  background: #f7fcf9;
+
+  border-left-color: var(--green);
+  border-top-color: #dcebe4;
+  border-bottom-color: #dcebe4;
 }
 
 .pub-meta {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 
   font-family:
     Arial,
@@ -276,41 +302,39 @@ li {
 
   padding: 2px 7px;
 
-  background: var(--blue-light);
+  background: var(--orange);
 
-  color: var(--navy);
+  color: white;
 
-  font-weight: 600;
+  font-weight: 650;
 
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
 
 .tag.yellow-light {
-  /*
-   * Keeping this class name means you do not
-   * need to edit the existing HTML.
-   */
-  background: var(--pink-light);
+  background: var(--green);
+  color: white;
 }
 
 .status {
   margin-left: 7px;
+
   color: var(--grey);
 }
 
 .paper-title {
   margin-bottom: 3px;
 
-  color: var(--navy);
+  color: var(--green-dark);
 
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 650;
   line-height: 1.45;
 }
 
 .authors {
-  margin-bottom: 1px;
+  margin-bottom: 2px;
 }
 
 .venue {
@@ -319,7 +343,7 @@ li {
 }
 
 .paper-links {
-  margin-top: 7px;
+  margin-top: 8px;
 
   font-family:
     Arial,
@@ -333,24 +357,27 @@ li {
   display: inline-block;
 
   margin-right: 5px;
-  padding: 1px 7px;
+  padding: 2px 7px;
 
-  border: 1px solid #b9c8d7;
-  border-radius: 3px;
+  border: 1px solid var(--green);
 
-  color: var(--blue);
+  background: white;
+  color: var(--green-dark);
+}
 
-  background: var(--white);
+.paper-links a:nth-child(even) {
+  border-color: var(--orange);
+  color: var(--orange-dark);
 }
 
 .paper-links a:hover {
-  background: var(--pink-light);
-
-  border-color: var(--pink);
-
-  color: var(--navy);
+  background: var(--green-light);
 
   text-decoration: none;
+}
+
+.paper-links a:nth-child(even):hover {
+  background: var(--orange-light);
 }
 
 
@@ -359,13 +386,17 @@ li {
    --------------------------------------------------------- */
 
 .teaching-semester {
-  margin-bottom: 30px;
+  margin-bottom: 31px;
 }
 
 .semester-title {
-  margin-bottom: 11px;
+  display: inline-block;
 
-  color: var(--blue);
+  margin-bottom: 12px;
+  padding: 2px 7px;
+
+  color: var(--green-dark);
+  background: var(--green-light);
 
   font-family:
     Arial,
@@ -373,25 +404,29 @@ li {
     sans-serif;
 
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 650;
 }
 
 .teaching-item {
-  margin-bottom: 19px;
+  margin-bottom: 20px;
   padding-left: 14px;
 
-  border-left: 3px solid var(--pink);
+  border-left: 4px solid var(--orange);
+}
+
+.teaching-item:nth-child(odd) {
+  border-left-color: var(--green);
 }
 
 .teaching-role {
   display: inline-block;
 
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   padding: 1px 7px;
 
-  background: var(--pink-light);
+  background: var(--orange-light);
 
-  color: var(--navy);
+  color: var(--orange-dark);
 
   font-family:
     Arial,
@@ -399,15 +434,15 @@ li {
     sans-serif;
 
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 650;
 
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
 
 .course-title {
-  color: var(--navy);
-  font-weight: 600;
+  color: var(--green-dark);
+  font-weight: 650;
 }
 
 .institution {
@@ -428,10 +463,10 @@ li {
    --------------------------------------------------------- */
 
 footer {
-  margin-top: 55px;
-  padding-top: 12px;
+  margin-top: 60px;
+  padding-top: 13px;
 
-  border-top: 1px solid var(--light-grey);
+  border-top: 2px solid var(--orange);
 
   color: #777;
 
@@ -446,24 +481,22 @@ footer {
 .footer-mark {
   display: inline-block;
 
-  width: 10px;
-  height: 10px;
+  width: 11px;
+  height: 11px;
 
   margin-right: 6px;
 
-  background: var(--pink);
-
-  border-radius: 50%;
+  background: var(--green);
 }
 
 
 /* ---------------------------------------------------------
-   TEXT SELECTION
+   SELECTION
    --------------------------------------------------------- */
 
 ::selection {
-  background: var(--pink-light);
-  color: var(--navy);
+  color: #222;
+  background: var(--orange-light);
 }
 
 
