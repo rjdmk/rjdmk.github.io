@@ -1,94 +1,402 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.55;
+:root {
+  /*
+   * LIPIcs-inspired colours.
+   * Yellow is deliberately used sparingly.
+   */
+  --yellow: #f2c94c;
+  --yellow-light: #fff3bd;
 
-  color: #222;
-  background: #fff;
+  --black: #1d1d1b;
+  --grey: #666;
+  --light-grey: #dddddd;
+  --background: #ffffff;
 
-  margin: 0;
-  padding: 0;
+  --link: #174a8b;
 }
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  background: var(--background);
+}
+
+
+body {
+  margin: 0;
+
+  color: var(--black);
+  background: var(--background);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   LIPIcs-like yellow line
+   --------------------------------------------------------- */
+
+.top-rule {
+  height: 8px;
+  width: 100%;
+  background: var(--yellow);
+}
+
+
+/* ---------------------------------------------------------
+   PAGE
+   --------------------------------------------------------- */
 
 main {
   max-width: 760px;
-  margin: 50px auto 80px auto;
-  padding: 0 22px;
+
+  margin: 48px auto 80px auto;
+  padding: 0 24px;
 }
+
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+header {
+  margin-bottom: 36px;
+}
+
 
 h1 {
-  font-size: 30px;
-  font-weight: 500;
-  margin-bottom: 5px;
+  margin: 0;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
-h2 {
-  font-size: 22px;
-  font-weight: 500;
 
-  margin-top: 38px;
-  margin-bottom: 12px;
+.subtitle {
+  margin: 7px 0 4px 0;
+
+  color: var(--grey);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 15px;
 }
+
+
+.contact {
+  margin-top: 6px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+}
+
+
+.contact span {
+  margin: 0 5px;
+  color: #999;
+}
+
+
+/* ---------------------------------------------------------
+   TEXT
+   --------------------------------------------------------- */
 
 p {
-  margin: 12px 0;
+  margin: 13px 0;
 }
 
+
+strong {
+  font-weight: 600;
+}
+
+
 a {
-  color: #0645ad;
+  color: var(--link);
   text-decoration: none;
 }
+
 
 a:hover {
   text-decoration: underline;
 }
 
-.contact {
-  margin-top: 0;
-  margin-bottom: 28px;
-  color: #444;
+
+/* ---------------------------------------------------------
+   SECTIONS
+   --------------------------------------------------------- */
+
+section {
+  margin-top: 38px;
 }
+
+
+h2 {
+  margin: 0 0 17px 0;
+
+  border-bottom: 1px solid var(--black);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+
+/*
+ * The small yellow block behind the heading gives
+ * the LIPIcs-like touch without overwhelming the page.
+ */
+
+h2 span {
+  display: inline-block;
+
+  padding: 3px 10px 3px 8px;
+
+  background: var(--yellow);
+}
+
+
+/* ---------------------------------------------------------
+   NEWS
+   --------------------------------------------------------- */
 
 ul {
   padding-left: 23px;
 }
 
+
 li {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 }
+
+
+.news {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+.news li {
+  margin-bottom: 12px;
+}
+
 
 .date {
-  color: #555;
-}
+  display: inline-block;
 
-.publication {
-  margin-bottom: 23px;
-}
+  min-width: 78px;
 
-.paper-title {
+  color: var(--grey);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
   font-weight: 600;
 }
 
+
+/* ---------------------------------------------------------
+   RESEARCH
+   --------------------------------------------------------- */
+
+.research-topic {
+  margin: 12px 0;
+}
+
+
+/* ---------------------------------------------------------
+   PUBLICATIONS
+   --------------------------------------------------------- */
+
+.publication {
+  margin: 0 0 31px 0;
+  padding-left: 14px;
+
+  border-left: 4px solid var(--yellow);
+}
+
+
+.pub-meta {
+  margin-bottom: 7px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+}
+
+
+.tag {
+  display: inline-block;
+
+  padding: 2px 7px;
+
+  background: var(--yellow);
+
+  color: var(--black);
+
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+
+.tag.yellow-light {
+  background: var(--yellow-light);
+}
+
+
+.status {
+  margin-left: 7px;
+  color: var(--grey);
+}
+
+
+.paper-title {
+  margin-bottom: 3px;
+
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+
+.authors {
+  margin-bottom: 1px;
+}
+
+
 .venue {
+  color: #444;
   font-style: italic;
 }
 
-.links {
-  margin-top: 2px;
+
+.paper-links {
+  margin-top: 5px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 13px;
 }
 
-.links a {
+
+.paper-links a {
+  display: inline-block;
+
   margin-right: 5px;
+  padding: 1px 6px;
+
+  border: 1px solid #aaa;
+
+  color: var(--black);
 }
+
+
+.paper-links a:hover {
+  background: var(--yellow-light);
+
+  border-color: var(--black);
+
+  text-decoration: none;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+footer {
+  margin-top: 55px;
+  padding-top: 11px;
+
+  border-top: 1px solid var(--light-grey);
+
+  color: #777;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+}
+
+
+.footer-mark {
+  display: inline-block;
+
+  width: 10px;
+  height: 10px;
+
+  margin-right: 5px;
+
+  background: var(--yellow);
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+   --------------------------------------------------------- */
 
 @media (max-width: 600px) {
 
   main {
     margin-top: 30px;
+    padding: 0 19px;
   }
 
+
   h1 {
-    font-size: 27px;
+    font-size: 29px;
+  }
+
+
+  body {
+    font-size: 16px;
+  }
+
+
+  .date {
+    display: block;
+    min-width: 0;
+    margin-bottom: 1px;
   }
 
 }
