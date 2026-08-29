@@ -13,6 +13,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
+<script>
+  const palettes = [
+    ["#E97824", "#28785F"], // orange + green
+
+    ["#E8C7CF", "#FFF9F4"], // soft pink + warm white
+    ["#F7E7CE", "#C96A3D"], // cream + burnt orange
+    ["#D8A7B1", "#8FA58C"], // dusty pink + sage
+    ["#F3B49F", "#7895A8"], // peach + muted blue
+    ["#C9785C", "#6F8B7A"], // terracotta + eucalyptus
+    ["#CFC1E8", "#FFF3D9"], // lavender + cream
+    ["#F1D7DC", "#8C4458"], // blush + burgundy
+    ["#E9A15B", "#345443"], // apricot + forest green
+    ["#F4E2A8", "#C9838B"], // pale yellow + dusty rose
+    ["#BFD8C2", "#E48778"], // mint + coral
+    ["#B8CFDC", "#F0B297"], // powder blue + peach
+    ["#7A8357", "#E39A88"], // olive + salmon
+    ["#F4E6CF", "#356B68"], // cream + deep teal
+    ["#E7C5CF", "#34475E"], // soft pink + navy
+    ["#E8D6B9", "#755266"]  // sand + plum
+  ];
+
+  const palette =
+    palettes[Math.floor(Math.random() * palettes.length)];
+
+  document.documentElement.style.setProperty(
+    "--color-a",
+    palette[0]
+  );
+
+  document.documentElement.style.setProperty(
+    "--color-b",
+    palette[1]
+  );
+</script>
+
 <body>
 
 <div class="top-rule"></div>
