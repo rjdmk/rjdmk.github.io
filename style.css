@@ -1,20 +1,56 @@
 :root {
+  /*
+   * Default/fallback palette:
+   * orange + green
+   *
+   * JavaScript changes --color-a and --color-b
+   * whenever the page loads.
+   */
+  --color-a: #e97824;
+  --color-b: #28785f;
+
   --white: #ffffff;
-  --cream: #fffaf1;
 
-  --orange: #e97824;
-  --orange-dark: #b95313;
-  --orange-light: #fff0df;
+  /*
+   * Keep the old variable names so the rest of the
+   * stylesheet remains simple.
+   */
+  --orange: var(--color-a);
+  --green: var(--color-b);
 
-  --green: #28785f;
-  --green-dark: #175947;
-  --green-light: #e3f2eb;
+  /*
+   * Automatically generate darker/lighter versions
+   * from whichever palette is selected.
+   */
+  --orange-dark:
+    color-mix(in srgb, var(--orange) 68%, #222222);
+
+  --orange-light:
+    color-mix(in srgb, var(--orange) 17%, #ffffff);
+
+  --green-dark:
+    color-mix(in srgb, var(--green) 68%, #222222);
+
+  --green-light:
+    color-mix(in srgb, var(--green) 17%, #ffffff);
+
+  --cream:
+    color-mix(in srgb, var(--orange) 7%, #ffffff);
+
+  --surface-green:
+    color-mix(in srgb, var(--green) 6%, #ffffff);
+
+  --border-orange:
+    color-mix(in srgb, var(--orange) 25%, #ffffff);
+
+  --border-green:
+    color-mix(in srgb, var(--green) 25%, #ffffff);
 
   --text: #252525;
   --grey: #666666;
   --light-grey: #dedbd5;
 
-  --link: #1d6c58;
+  --link: var(--green-dark);
 }
 
 
@@ -137,7 +173,7 @@ h1 {
    --------------------------------------------------------- */
 
 a {
-  color: var(--green);
+  color: var(--green-dark);
   text-decoration: none;
 
   border-bottom: 1px solid transparent;
@@ -274,16 +310,16 @@ li {
   background: var(--cream);
 
   border-left: 5px solid var(--orange);
-  border-top: 1px solid #eee3d4;
-  border-bottom: 1px solid #eee3d4;
+  border-top: 1px solid var(--border-orange);
+  border-bottom: 1px solid var(--border-orange);
 }
 
 .publication:nth-of-type(even) {
-  background: #f7fcf9;
+  background: var(--surface-green);
 
   border-left-color: var(--green);
-  border-top-color: #dcebe4;
-  border-bottom-color: #dcebe4;
+  border-top-color: var(--border-green);
+  border-bottom-color: var(--border-green);
 }
 
 .pub-meta {
@@ -303,8 +339,7 @@ li {
   padding: 2px 7px;
 
   background: var(--orange);
-
-  color: white;
+  color: #222;
 
   font-weight: 650;
 
@@ -314,12 +349,11 @@ li {
 
 .tag.yellow-light {
   background: var(--green);
-  color: white;
+  color: #222;
 }
 
 .status {
   margin-left: 7px;
-
   color: var(--grey);
 }
 
