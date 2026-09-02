@@ -1,11 +1,12 @@
-
 :root {
   /* Wolverine-inspired palette */
+
   --yellow: #F4C430;
-  --yellow-light: #FFF5C7;
-  --yellow-soft: #FFFAE8;
+  --yellow-light: #FFF3A6;
+  --yellow-soft: #FFF9DF;
 
   --blue: #183B66;
+  --blue-dark: #102A4A;
   --blue-light: #E8EEF5;
 
   --black: #171717;
@@ -53,9 +54,18 @@ body {
 
 .top-rule {
   width: 100%;
-  height: 7px;
+  height: 8px;
 
-  background: var(--yellow);
+  background:
+    linear-gradient(
+      to right,
+      var(--yellow) 0%,
+      var(--yellow) 58%,
+      var(--blue) 58%,
+      var(--blue) 88%,
+      var(--black) 88%,
+      var(--black) 100%
+    );
 }
 
 
@@ -72,11 +82,69 @@ main {
 
 
 /* ---------------------------------------------------------
+   INTRO
+   --------------------------------------------------------- */
+
+.intro {
+  position: relative;
+
+  margin: -48px -24px 0;
+  padding: 42px 24px 31px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--yellow-soft) 0%,
+      #fffdf5 52%,
+      var(--white) 100%
+    );
+
+  border-bottom: 4px solid var(--yellow);
+}
+
+
+/*
+ * Short blue bar at the top of the introduction.
+ */
+
+.intro::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 120px;
+  height: 7px;
+
+  background: var(--blue);
+}
+
+
+/*
+ * Small black continuation of the blue bar.
+ */
+
+.intro::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 120px;
+
+  width: 35px;
+  height: 7px;
+
+  background: var(--black);
+}
+
+
+/* ---------------------------------------------------------
    HEADER
    --------------------------------------------------------- */
 
 header {
-  margin-bottom: 38px;
+  margin-bottom: 27px;
 }
 
 h1 {
@@ -89,25 +157,39 @@ h1 {
     Helvetica,
     sans-serif;
 
-  font-size: 35px;
-  line-height: 1.2;
-  font-weight: 650;
-  letter-spacing: -0.5px;
+  font-size: 37px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.7px;
 }
 
-.subtitle {
-  margin: 7px 0 4px;
 
-  color: var(--blue);
+/* ---------------------------------------------------------
+   SUBTITLE
+   --------------------------------------------------------- */
+
+.subtitle {
+  display: inline-block;
+
+  margin: 9px 0 6px;
+  padding: 2px 8px;
+
+  color: var(--blue-dark);
+  background: var(--yellow);
 
   font-family:
     Arial,
     Helvetica,
     sans-serif;
 
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 650;
 }
+
+
+/* ---------------------------------------------------------
+   CONTACT LINKS
+   --------------------------------------------------------- */
 
 .contact {
   margin-top: 7px;
@@ -120,14 +202,48 @@ h1 {
   font-size: 14px;
 }
 
+.contact a {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.contact a:hover {
+  color: var(--black);
+  border-bottom-color: var(--yellow);
+}
+
 .contact span {
   margin: 0 5px;
-  color: #aaa;
+
+  color: var(--yellow);
+  font-weight: 700;
 }
 
 
 /* ---------------------------------------------------------
-   LINKS
+   ABOUT / INTRO TEXT
+   --------------------------------------------------------- */
+
+.about {
+  max-width: 700px;
+}
+
+.about p {
+  margin: 12px 0;
+}
+
+.about a {
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.about strong {
+  color: var(--blue-dark);
+}
+
+
+/* ---------------------------------------------------------
+   GENERAL LINKS
    --------------------------------------------------------- */
 
 a {
@@ -165,6 +281,11 @@ section {
   margin-top: 41px;
 }
 
+
+/* ---------------------------------------------------------
+   SECTION HEADINGS
+   --------------------------------------------------------- */
+
 h2 {
   margin: 0 0 18px;
 
@@ -186,17 +307,16 @@ h2 span {
   display: inline-block;
 
   margin-bottom: -2px;
-  padding: 3px 8px 3px 0;
+  padding: 3px 9px 3px 0;
 
   color: var(--black);
-  background: transparent;
 
   border-bottom: 2px solid var(--blue);
 }
 
 
 /* ---------------------------------------------------------
-   NEWS
+   LISTS
    --------------------------------------------------------- */
 
 ul {
@@ -207,13 +327,18 @@ li {
   margin-bottom: 8px;
 }
 
+
+/* ---------------------------------------------------------
+   NEWS
+   --------------------------------------------------------- */
+
 .news {
   list-style: none;
   padding-left: 0;
 }
 
 .news li {
-  margin-bottom: 13px;
+  margin-bottom: 14px;
   padding-left: 12px;
 
   border-left: 3px solid var(--yellow);
@@ -247,6 +372,10 @@ li {
   border-left: 4px solid var(--yellow);
 }
 
+.research-topic strong {
+  color: var(--blue-dark);
+}
+
 
 /* ---------------------------------------------------------
    PUBLICATIONS
@@ -277,8 +406,8 @@ li {
 
   padding: 2px 7px;
 
-  background: var(--yellow);
   color: var(--black);
+  background: var(--yellow);
 
   font-weight: 650;
 
@@ -288,6 +417,7 @@ li {
 
 .status {
   margin-left: 7px;
+
   color: var(--grey);
 }
 
@@ -315,6 +445,11 @@ li {
   font-style: italic;
 }
 
+
+/* ---------------------------------------------------------
+   PUBLICATION LINKS
+   --------------------------------------------------------- */
+
 .paper-links {
   margin-top: 8px;
 
@@ -332,15 +467,15 @@ li {
   margin-right: 5px;
   padding: 2px 7px;
 
-  background: var(--white);
   color: var(--blue);
+  background: var(--white);
 
   border: 1px solid var(--blue);
 }
 
 .paper-links a:hover {
-  background: var(--blue);
   color: var(--white);
+  background: var(--blue);
 
   border-bottom-color: var(--blue);
 }
@@ -351,7 +486,7 @@ li {
    --------------------------------------------------------- */
 
 .teaching-semester {
-  margin-bottom: 32px;
+  margin-bottom: 34px;
 }
 
 .semester-title {
@@ -360,8 +495,8 @@ li {
   margin: 0 0 15px;
   padding: 3px 8px;
 
-  background: var(--yellow);
   color: var(--black);
+  background: var(--yellow);
 
   font-family:
     Arial,
@@ -386,8 +521,8 @@ li {
   margin-bottom: 4px;
   padding: 1px 7px;
 
-  background: var(--blue-light);
   color: var(--blue);
+  background: var(--blue-light);
 
   font-family:
     Arial,
@@ -463,7 +598,7 @@ footer {
 
 
 /* ---------------------------------------------------------
-   SELECTION
+   TEXT SELECTION
    --------------------------------------------------------- */
 
 ::selection {
@@ -483,8 +618,26 @@ footer {
     padding: 0 19px;
   }
 
+  .intro {
+    margin: -30px -19px 0;
+    padding: 30px 19px 25px;
+  }
+
+  .intro::before {
+    width: 90px;
+  }
+
+  .intro::after {
+    left: 90px;
+    width: 28px;
+  }
+
   h1 {
-    font-size: 29px;
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 13px;
   }
 
   body {
@@ -510,4 +663,3 @@ footer {
   }
 
 }
-
