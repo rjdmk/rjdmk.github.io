@@ -1,56 +1,21 @@
+```css id="4iyovh"
 :root {
-  /*
-   * Default/fallback palette:
-   * orange + green
-   *
-   * JavaScript changes --color-a and --color-b
-   * whenever the page loads.
-   */
-  --color-a: #e97824;
-  --color-b: #28785f;
+  /* Wolverine-inspired palette */
+  --yellow: #F4C430;
+  --yellow-light: #FFF5C7;
+  --yellow-soft: #FFFAE8;
 
-  --white: #ffffff;
+  --blue: #183B66;
+  --blue-light: #E8EEF5;
 
-  /*
-   * Keep the old variable names so the rest of the
-   * stylesheet remains simple.
-   */
-  --orange: var(--color-a);
-  --green: var(--color-b);
+  --black: #171717;
+  --white: #FFFFFF;
 
-  /*
-   * Automatically generate darker/lighter versions
-   * from whichever palette is selected.
-   */
-  --orange-dark:
-    color-mix(in srgb, var(--orange) 68%, #222222);
-
-  --orange-light:
-    color-mix(in srgb, var(--orange) 17%, #ffffff);
-
-  --green-dark:
-    color-mix(in srgb, var(--green) 68%, #222222);
-
-  --green-light:
-    color-mix(in srgb, var(--green) 17%, #ffffff);
-
-  --cream:
-    color-mix(in srgb, var(--orange) 7%, #ffffff);
-
-  --surface-green:
-    color-mix(in srgb, var(--green) 6%, #ffffff);
-
-  --border-orange:
-    color-mix(in srgb, var(--orange) 25%, #ffffff);
-
-  --border-green:
-    color-mix(in srgb, var(--green) 25%, #ffffff);
-
-  --text: #252525;
+  --text: #292929;
   --grey: #666666;
-  --light-grey: #dedbd5;
+  --light-grey: #DDDDDD;
 
-  --link: var(--green-dark);
+  --link: var(--blue);
 }
 
 
@@ -87,17 +52,10 @@ body {
    --------------------------------------------------------- */
 
 .top-rule {
-  height: 9px;
   width: 100%;
+  height: 7px;
 
-  background:
-    linear-gradient(
-      to right,
-      var(--orange) 0%,
-      var(--orange) 46%,
-      var(--green) 46%,
-      var(--green) 100%
-    );
+  background: var(--yellow);
 }
 
 
@@ -108,7 +66,7 @@ body {
 main {
   max-width: 760px;
 
-  margin: 48px auto 80px auto;
+  margin: 48px auto 80px;
   padding: 0 24px;
 }
 
@@ -124,7 +82,7 @@ header {
 h1 {
   margin: 0;
 
-  color: var(--green-dark);
+  color: var(--black);
 
   font-family:
     Arial,
@@ -138,9 +96,9 @@ h1 {
 }
 
 .subtitle {
-  margin: 7px 0 4px 0;
+  margin: 7px 0 4px;
 
-  color: var(--orange-dark);
+  color: var(--blue);
 
   font-family:
     Arial,
@@ -148,7 +106,7 @@ h1 {
     sans-serif;
 
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .contact {
@@ -173,15 +131,15 @@ h1 {
    --------------------------------------------------------- */
 
 a {
-  color: var(--green-dark);
+  color: var(--link);
   text-decoration: none;
 
   border-bottom: 1px solid transparent;
 }
 
 a:hover {
-  color: var(--orange-dark);
-  border-bottom-color: var(--orange);
+  color: var(--black);
+  border-bottom-color: var(--yellow);
 }
 
 
@@ -194,7 +152,7 @@ p {
 }
 
 strong {
-  color: var(--green-dark);
+  color: var(--black);
   font-weight: 600;
 }
 
@@ -208,9 +166,11 @@ section {
 }
 
 h2 {
-  margin: 0 0 18px 0;
+  margin: 0 0 18px;
 
-  border-bottom: 2px solid var(--green);
+  color: var(--black);
+
+  border-bottom: 2px solid var(--yellow);
 
   font-family:
     Arial,
@@ -220,22 +180,18 @@ h2 {
   font-size: 19px;
   line-height: 1.4;
   font-weight: 650;
-
-  color: var(--green-dark);
 }
 
 h2 span {
   display: inline-block;
 
   margin-bottom: -2px;
-  padding: 4px 12px 4px 9px;
+  padding: 3px 8px 3px 0;
 
-  color: #222;
+  color: var(--black);
+  background: transparent;
 
-  background: var(--orange-light);
-
-  border-left: 6px solid var(--orange);
-  border-bottom: 2px solid var(--orange);
+  border-bottom: 2px solid var(--blue);
 }
 
 
@@ -258,10 +214,9 @@ li {
 
 .news li {
   margin-bottom: 13px;
-
   padding-left: 12px;
 
-  border-left: 3px solid var(--green-light);
+  border-left: 3px solid var(--yellow);
 }
 
 .date {
@@ -269,7 +224,7 @@ li {
 
   min-width: 82px;
 
-  color: var(--orange-dark);
+  color: var(--blue);
 
   font-family:
     Arial,
@@ -289,11 +244,7 @@ li {
   margin: 14px 0;
   padding: 7px 10px;
 
-  border-left: 4px solid var(--green);
-}
-
-.research-topic:nth-child(even) {
-  border-left-color: var(--orange);
+  border-left: 4px solid var(--yellow);
 }
 
 
@@ -302,24 +253,12 @@ li {
    --------------------------------------------------------- */
 
 .publication {
-  position: relative;
+  margin: 0 0 30px;
+  padding: 14px 16px;
 
-  margin: 0 0 34px 0;
-  padding: 14px 15px 14px 18px;
+  background: var(--yellow-soft);
 
-  background: var(--cream);
-
-  border-left: 5px solid var(--orange);
-  border-top: 1px solid var(--border-orange);
-  border-bottom: 1px solid var(--border-orange);
-}
-
-.publication:nth-of-type(even) {
-  background: var(--surface-green);
-
-  border-left-color: var(--green);
-  border-top-color: var(--border-green);
-  border-bottom-color: var(--border-green);
+  border-left: 5px solid var(--yellow);
 }
 
 .pub-meta {
@@ -338,18 +277,13 @@ li {
 
   padding: 2px 7px;
 
-  background: var(--orange);
-  color: #222;
+  background: var(--yellow);
+  color: var(--black);
 
   font-weight: 650;
 
   text-transform: uppercase;
   letter-spacing: 0.4px;
-}
-
-.tag.yellow-light {
-  background: var(--green);
-  color: #222;
 }
 
 .status {
@@ -358,9 +292,14 @@ li {
 }
 
 .paper-title {
-  margin-bottom: 3px;
+  margin: 0 0 3px;
 
-  color: var(--green-dark);
+  color: var(--black);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
   font-size: 18px;
   font-weight: 650;
@@ -393,25 +332,17 @@ li {
   margin-right: 5px;
   padding: 2px 7px;
 
-  border: 1px solid var(--green);
+  background: var(--white);
+  color: var(--blue);
 
-  background: white;
-  color: var(--green-dark);
-}
-
-.paper-links a:nth-child(even) {
-  border-color: var(--orange);
-  color: var(--orange-dark);
+  border: 1px solid var(--blue);
 }
 
 .paper-links a:hover {
-  background: var(--green-light);
+  background: var(--blue);
+  color: var(--white);
 
-  text-decoration: none;
-}
-
-.paper-links a:nth-child(even):hover {
-  background: var(--orange-light);
+  border-bottom-color: var(--blue);
 }
 
 
@@ -420,17 +351,17 @@ li {
    --------------------------------------------------------- */
 
 .teaching-semester {
-  margin-bottom: 31px;
+  margin-bottom: 32px;
 }
 
 .semester-title {
   display: inline-block;
 
-  margin-bottom: 12px;
-  padding: 2px 7px;
+  margin: 0 0 15px;
+  padding: 3px 8px;
 
-  color: var(--green-dark);
-  background: var(--green-light);
+  background: var(--yellow);
+  color: var(--black);
 
   font-family:
     Arial,
@@ -438,18 +369,15 @@ li {
     sans-serif;
 
   font-size: 14px;
+  line-height: 1.4;
   font-weight: 650;
 }
 
 .teaching-item {
-  margin-bottom: 20px;
+  margin-bottom: 21px;
   padding-left: 14px;
 
-  border-left: 4px solid var(--orange);
-}
-
-.teaching-item:nth-child(odd) {
-  border-left-color: var(--green);
+  border-left: 4px solid var(--blue);
 }
 
 .teaching-role {
@@ -458,9 +386,8 @@ li {
   margin-bottom: 4px;
   padding: 1px 7px;
 
-  background: var(--orange-light);
-
-  color: var(--orange-dark);
+  background: var(--blue-light);
+  color: var(--blue);
 
   font-family:
     Arial,
@@ -475,20 +402,31 @@ li {
 }
 
 .course-title {
-  color: var(--green-dark);
+  color: var(--black);
   font-weight: 650;
 }
 
 .institution {
-  color: #555;
-  font-size: 15px;
+  margin-top: 1px;
+
+  color: #666;
+  font-size: 14px;
 }
 
 .teaching-note {
-  margin-top: 4px;
+  margin-top: 5px;
 
   color: #444;
   font-size: 15px;
+}
+
+.teaching-semester > ul {
+  margin-top: 8px;
+  padding-left: 22px;
+}
+
+.teaching-semester > ul li {
+  margin-bottom: 5px;
 }
 
 
@@ -500,9 +438,9 @@ footer {
   margin-top: 60px;
   padding-top: 13px;
 
-  border-top: 2px solid var(--orange);
-
   color: #777;
+
+  border-top: 2px solid var(--black);
 
   font-family:
     Arial,
@@ -520,7 +458,7 @@ footer {
 
   margin-right: 6px;
 
-  background: var(--green);
+  background: var(--yellow);
 }
 
 
@@ -529,8 +467,8 @@ footer {
    --------------------------------------------------------- */
 
 ::selection {
-  color: #222;
-  background: var(--orange-light);
+  color: var(--black);
+  background: var(--yellow);
 }
 
 
@@ -555,8 +493,21 @@ footer {
 
   .date {
     display: block;
+
     min-width: 0;
     margin-bottom: 1px;
   }
 
+  .publication {
+    padding: 12px 13px;
+  }
+
+  .status {
+    display: block;
+
+    margin-top: 3px;
+    margin-left: 0;
+  }
+
 }
+```
